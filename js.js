@@ -13,12 +13,10 @@ function getUser(userName) {
 function displayResults(responseJson) {
     $('.results').empty();
     console.log(responseJson);
-    let html = '';
+    let html = '<ul>';
     responseJson.forEach((project) =>
-    html += `
-    <ul> 
-        <li><a href="${project.html_url}">${project.name}</a></li>
-    </ul>`)
+    html += `<li><a href="${project.html_url}">${project.name}</a></li>`)
+    html += '</ul>';
     $('.results').append(html);
 }
 
